@@ -1,0 +1,56 @@
+{% extends "core/_base.html" %}
+{% load static %}
+
+{% block title %}Актуальные новости!{% endblock %}
+
+{% block extra_header %}
+    <link rel="stylesheet" href="{% static 'css/posts.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="content posts-content">
+        <div class="block post">
+            <form action="/posts/" method="post" class="add-post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="input">{{ field }}</div>
+                {% endfor %}
+                <button type="submit">Добавить пост</button>
+            </form>
+        </div>
+
+        {% for post in posts %}
+            <div class="block post">
+                <div class="header">
+                    <div class="title">
+                        {{ post.user.username }}
+                        {{ post.date }}
+                    </div>
+                    <div class="actions">
+                        <a href="/posts/{{ post.id }}/edit/">📝</a>
+                        <a href="/posts/{{ post.id }}/delete/">❌</a>
+                    </div>
+                </div>
+                <div class="content">
+                    {{ post.content }}
+                </div>
+                <div class="footer">
+                    <div class="reactions">
+                        <a href="/posts/{{ post.id }}/like/">
+                            <span class="counter">{{ post.likes.count }}</span>
+                            <span class="icon">👍</span>
+                        </a>
+                        <a href="/posts/{{ post.id }}/dislike/">
+                            <span class="counter">{{ post.dislikes.count }}</span>
+                            <span class="icon">👎</span>
+                        </a>
+                        <a class="ellipsis" href="/posts/{{ post.id }}/ellipsis/">
+                            <span class="counter">{{ post.ellipsis.count }}</span>
+                            <span class="icon">···</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "users/_base.html" %}
+
+{% block title %}Авторизация{% endblock %}
+{% block auth_header %}Авторизация{% endblock %}
+{% block auth_action %}/users/authorization/{% endblock %}
+{% block auth_subbmit %}Войти{% endblock %}
+
+{% block auth_switch %}
+    Еще нет аккаунта?
+    <a href="/users/registration/">...Зарегистрироваться</a>
+{% endblock %}

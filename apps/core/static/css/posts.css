@@ -1,0 +1,58 @@
+.content.posts-content {
+    padding: 40px;
+    gap: 40px;
+    width: 900px;
+    min-height: 100vh;
+}
+
+.post > .header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post > .content {
+    margin-top: 10px;
+}
+
+.post > .footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.post > .header .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.post > .footer .reactions {
+    align-self: end;
+    display: flex;
+    gap: 10px;
+}
+
+.post > .header .actions a, .post > .footer .reactions a {
+    text-decoration: none;
+}
+
+.post > .footer .reactions a {
+    background: #EDEEF0;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 4px 10px;
+    white-space: nowrap;
+    color: #4376a6;
+}
+
+.post > .footer .reactions a:not(.ellipsis) .icon {
+    font-size: 10px;
+}
+
+.post > .footer .reactions .ellipsis .icon {
+    font-weight: bold;
+    font-size: 12px;
+}

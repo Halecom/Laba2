@@ -1,0 +1,47 @@
+html * {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background: #edeef0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+input, textarea {
+    width: 100%;
+    outline: none;
+    border: 1px solid #c0bebe;
+    background: #edeef0;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+textarea {
+    max-width: 100%;
+    min-width: 100%;
+    height: 70px;
+    min-height: 70px;
+    max-height: 250px;
+}
+
+button {
+    font-size: 16px;
+    background: none;
+    outline: none;
+    border: none;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    background: #4376a6;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px 2px rgba(26, 75, 120, 0.25);
+}

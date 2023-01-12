@@ -1,0 +1,31 @@
+{% extends "core/_base.html" %}
+{% load static %}
+
+{% block extra_header %}
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="content auth-content">
+        <div class="block auth">
+            <div class="header">{% block auth_header %}{% endblock %}</div>
+            <div class="content">
+                <form action="{% block auth_action %}{% endblock %}" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="field">
+                            {{ field }}
+                            <div class="errors">
+                                {% for error in field.errors %}
+                                    <div class="error">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <button class="submit">{% block auth_subbmit %}{% endblock %}</button>
+                </form>
+                <div class="switch">{% block auth_switch %}{% endblock %}</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+.wrapper {
+    overflow-y: scroll;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.wrapper > .content {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.block {
+    display: flex;
+    gap: 15px;
+    padding: 20px 40px;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 10px rgba(26, 75, 120, 0.25);
+}
